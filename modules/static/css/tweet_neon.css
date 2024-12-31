@@ -1,0 +1,153 @@
+
+.tweet_pannel {
+    padding: 20px 30px;
+    background-color: #111; /* Darker background for contrast */
+    border: none;
+    color: #7cff00; /* Neon green text */
+    font-size: 17px;
+    width: 60vw;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+}
+
+.retweet_pannel {
+    padding: 20px 30px;
+    background-color: #111; /* Consistent dark background */
+    border: none;
+    border-bottom: 1px solid rgba(255, 0, 127, 0.7); /* Neon pink for subtle separation */
+    color: #ff6f00; /* Neon orange for the retweet panel */
+    font-size: 17px;
+    width: 100%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+}
+
+.retweet_post {
+    padding: 2px 20px;
+    border-left: 5px solid #29fafa; /* Neon cyan highlight */
+    background-color: rgba(41, 250, 250, 0.2); /* Light neon cyan tint */
+    margin: 10px 30px;
+}
+
+.submit_tweet {
+    border: none;
+    background-color: #ff007f; /* Vibrant neon pink */
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    margin: 5px 30px 15px;
+    box-shadow: 0 0 10px #ff007f; /* Subtle glow */
+}
+
+.submit_tweet:hover {
+    background-color: #ff1493; /* Brighter neon pink on hover */
+    cursor: pointer;
+    box-shadow: 0 0 15px #ff007f; /* Stronger glow */
+    transition: 0.3s;
+}
+
+.tweet {
+    border-bottom: 10px solid rgba(255, 255, 255, 0.2); /* Adjusted glow */
+    padding: 20px 30px;
+    display: flex;
+    background-color: rgba(41, 250, 250, 0.05); /* Light cyan overlay for tweet posts */
+}
+
+.userTweet {
+    width: 100%;
+    color: #29fafa; /* Cyan color for user text */
+}
+
+.meta_tweet {
+    display: flex;
+}
+
+.image_upload {
+    background-color: #1a1a1a; /* Slightly lighter dark */
+    border: none;
+    color: #7cff00; /* Neon green for icons or buttons */
+}
+
+.image_upload:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px #7cff00; /* Green glowing hover */
+}
+
+.upload_window {
+    background-color: #29fafa; /* Neon cyan background */
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 0 15px #29fafa, 0 0 30px #29fafa; /* Glow */
+}
+
+.files input {
+    outline: 2px dashed rgba(41, 250, 250, 0.7);
+    outline-offset: -10px;
+    padding: 120px 0px 85px 35%;
+    text-align: center !important;
+    margin: 0;
+    width: 100% !important;
+    transition: all 0.3s ease;
+    background-color: rgba(41, 250, 250, 0.05); /* Light cyan */
+    color: white;
+}
+
+.files input:focus {
+    outline: 2px dashed #29fafa;
+    background-color: rgba(41, 250, 250, 0.1);
+    border: 2px solid #29fafa;
+}
+
+.files:after {
+    pointer-events: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 50px;
+    right: 0;
+    height: 56px;
+    content: "";
+    background-image: url(https://cdn-icons-png.flaticon.com/128/725/725102.png); /* Updated icon */
+    display: block;
+    margin: 0 auto;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.color input {
+    background-color: rgba(41, 250, 250, 0.2);
+    color: white;
+}
+
+.files:before {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    right: 0;
+    height: 57px;
+    content: " or drag it here. ";
+    display: block;
+    margin: 0 auto;
+    color: #29fafa;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.tweet_image {
+    height: 200px;
+    width: auto;
+    border-radius: 10px;
+    margin: 10px auto 20px;
+    box-shadow: 0 0 10px rgba(41, 250, 250, 0.7); /* Subtle image glow */
+}
+
+.tweet_image:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 15px rgba(41, 250, 250, 1); /* Brighter glow */
+}

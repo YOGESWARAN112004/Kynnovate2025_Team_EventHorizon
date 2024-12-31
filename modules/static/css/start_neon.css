@@ -1,0 +1,117 @@
+body {
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+    background: linear-gradient(90deg, #0f1624 50%, #1b2838 50%);
+}
+
+.image-bg {
+    background-color: rgba(29, 161, 242, 1);
+    height: 100vh;
+    width: 50%;
+    box-shadow: inset 0 0 10px #1da1f2, inset 0 0 20px #1da1f2;
+}
+.user-bg {
+    background-color: rgb(21, 32, 43);
+    height: 100vh;
+    width: 50%;
+}
+
+.about {
+    margin: 40% 20%;
+    color: whitesmoke;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+.about ul {
+    list-style: none;
+}
+.about li {
+    margin-bottom: 20px;
+    color: rgba(29, 161, 242, 1);
+    text-shadow: 0 0 10px #1da1f2;
+}
+
+.container {
+    margin-top: 50px;
+    color: whitesmoke;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+}
+.intro {
+    font-size: 40px;
+    margin-left: 150px;
+    color: rgba(29, 161, 242, 1);
+    text-shadow: 0 0 15px #1da1f2;
+}
+.form_control {
+    width: 50%;
+    margin: 10px auto;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 2px solid rgba(29, 161, 242, 0.8);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #29fafa;
+    font-size: 16px;
+    box-shadow: 0 0 8px rgba(29, 161, 242, 0.6);
+}
+.login_control {
+    width: 80%;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 2px solid rgba(29, 161, 242, 0.8);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #29fafa;
+    font-size: 16px;
+    box-shadow: 0 0 8px rgba(29, 161, 242, 0.6);
+}
+.form_signup {
+    width: 40%;
+    margin: 10px auto;
+    padding: 10px 15px;
+    color: whitesmoke;
+    background-color: #1da1f2;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 0 12px #1da1f2;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.form_signup:hover {
+    background-color: #1984c8;
+    box-shadow: 0 0 15px #1984c8;
+    transform: scale(1.05);
+}
+.login_btn {
+    width: 40%;
+    margin: 10px auto;
+    padding: 10px 15px;
+    color: whitesmoke;
+    background-color: #1da1f2;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 0 12px #1da1f2; 
+    font-weight: bold;
+    transition: 0.3s;
+}
+.login_btn:hover {
+    background-color: #1984c8;
+    box-shadow: 0 0 15px #1984c8;
+    transform: scale(1.05);
+}
+.icons {
+    width: 35px;
+    height: auto;
+    margin-right: 10px;
+    filter: drop-shadow(0 0 5px #29fafa);
+}
+.twitter {
+    width: 60px; 
+    height: auto; 
+    margin-left: 150px; 
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 8px #1da1f2);
+}

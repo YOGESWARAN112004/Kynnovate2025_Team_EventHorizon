@@ -1,0 +1,125 @@
+.pagination {
+    margin: 30px;
+}
+.pages {
+    background-color: #f0f0f5; /* Light background */
+    padding: 3px 7px;
+    border: 1px solid #0366d6; /* Blue border for modern aesthetic */
+    border-radius: 2px;
+}
+.pagination > a:hover {
+    background-color: #0366d6; /* Highlighted blue background */
+    color: #ffffff; /* White text on hover */
+    transition: 0.2s;
+    cursor: pointer;
+}
+.active_page {
+    background-color: #0366d6; /* Active page indicator */
+    color: #ffffff; /* White text */
+    transition: 0.2s;
+    cursor: pointer; 
+    padding: 3px 7px;
+    border: 1px solid #0366d6;
+    border-radius: 2px;
+}
+.container {
+    display: flex;
+}
+.navbar {
+    background-color: #e8e8ee; /* Light gray for navbar */
+    width: 20%;
+    padding-top: 100px;
+    text-align: right;
+    border-right: 1px solid #d6d6d6; /* Subtle border */
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+.navbar ul > li {
+    list-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-right: 70px;
+}
+.navbar ul > li:hover {
+    color: #0056b3; /* Blue text on hover */
+    transition: 0.2s;
+}
+.navbar ul > li > img {
+    width: 25px;
+    height: auto;
+    margin-right: 15px;
+}
+.deactivate {
+    text-align: center;
+    color: tomato;
+}
+
+.posts {
+    background-color: #ffffff; /* Pure white background for posts */
+    border-right: 1px solid #d6d6d6;
+    width: 70%;
+}
+.greeting {
+    border-bottom: 1px solid #d6d6d6;
+    background-color: #e8e8ee; /* Soft gray */
+    color: #2b2b2b; /* Dark text */
+    width: 100%;
+    padding: 20px 30px;
+    font-size: 18px;
+    position: sticky;
+    top: 0;
+}
+
+.info {
+    background-color: #f9f9fc; /* Slightly off-white for info box */
+    color: #2b2b2b;
+    padding: 20px;
+    width: 20%;
+    position: sticky;
+    top: 0;
+}
+.notice {
+    padding: 20px;
+    background-color: #f9f9fc; /* Matching info box */
+    color: #2b2b2b;
+    position: sticky;
+    top: 0;
+}
+.light {
+    font-size: 15px;
+    color: #6c757d; /* Subtle gray text */
+}
+.username {
+    font-size: 0.9em;
+    color: #2b2b2b; /* Dark text */
+}
+.username:hover {
+    text-decoration: underline;
+    color: #0366d6; /* Blue underline */
+    transition: 0.2s;
+}
+.thumbnail {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+.filter_white {
+    filter: invert(20%) sepia(2%) saturate(20%) hue-rotate(185deg) brightness(90%) contrast(85%);
+    width: 20px;
+    height: auto;
+    margin-right: 30px;
+}
+.empty {
+    margin-top: 50px;
+    text-align: center;
+    color: #6c757d; /* Subtle gray text */
+}
+.empty > img {
+    width: 200px;
+    height: auto;
+    opacity: 0.7; /* Slight transparency */
+}

@@ -1,0 +1,125 @@
+  /* Background Gradient with Vibrant Colors */
+  body {
+    background: linear-gradient(135deg, #ff6a00, #ee0979); /* Bright Orange to Hot Pink */
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+}
+
+/* Tweet Panel with Vibrant Gradient */
+.tweet_pannel {
+    padding: 20px 30px;
+    background: linear-gradient(135deg, #ff6a00, #ee0979); /* Bright Orange to Hot Pink */
+    border: none;
+    color: white;
+    font-size: 17px;
+    width: 60vw;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+}
+
+/* Retweet Panel with Lighter Gradient */
+.retweet_pannel {
+    padding: 20px 30px;
+    background: linear-gradient(135deg, #ff6a00, #ff1493); /* Orange to Deep Pink */
+    border: none;
+    border-bottom: 1px solid #ff1493;
+    color: white;
+    font-size: 17px;
+    width: 100%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+}
+
+/* Retweet Post with Gradient Border and Background */
+.retweet_post {
+    padding: 2px 20px;
+    border-left: 5px solid #ee0979; /* Pink border */
+    background: rgba(255, 105, 180, 0.3); /* Light Pink background */
+    margin: 10px 30px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Submit Tweet Button with Bright Gradient */
+.submit_tweet {
+    border: none;
+    background: linear-gradient(135deg, #ff6a00, #ee0979); /* Bright Orange to Hot Pink */
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    margin: 5px 30px 15px;
+}
+
+.submit_tweet:hover {
+    background: linear-gradient(135deg, #ee0979, #ff6a00); /* Reverse gradient for hover effect */
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* Tweet Container with Gradient Border and Background */
+.tweet {
+    border-bottom: 10px solid rgba(255, 105, 180, 0.4);
+    padding: 20px 30px;
+    display: flex;
+    background: linear-gradient(135deg, #ff6a00, #ee0979); /* Bright Orange to Hot Pink */
+}
+
+/* Image Upload Window with Vibrant Gradient */
+.upload_window {
+    background: linear-gradient(135deg, #ff6a00, #ff1493); /* Gradient from Bright Orange to Deep Pink */
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+
+/* File Upload Area with Vibrant Focus */
+.files input {
+    outline: 2px dashed #ff6a00;
+    outline-offset: -10px;
+    transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    padding: 120px 0px 85px 35%;
+    text-align: center !important;
+    margin: 0;
+    width: 100% !important;
+    background: linear-gradient(135deg, #ff6a00, #ff1493); /* Gradient inside the input */
+}
+
+/* Focus Effect with Orange and Pink Gradient */
+.files input:focus {
+    outline: 2px dashed #ff6a00;
+    outline-offset: -10px;
+    border: 1px solid #ff6a00;
+}
+
+/* Drag-and-Drop Text with Gradient Highlight */
+.files:before {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    right: 0;
+    height: 57px;
+    content: "or drag it here.";
+    display: block;
+    margin: 0 auto;
+    color: #ff6a00;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-align: center;
+    background: rgba(255, 105, 180, 0.4);
+}
+
+/* Image Hover Effect */
+.tweet_image {
+    height: 200px;
+    width: auto;
+    border-radius: 10px;
+    margin: 10px auto 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.tweet_image:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,140 @@
+
+.pagination {
+    margin: 30px;
+}
+.pages {
+    background-color: #16202c; /* Dark background */
+    padding: 3px 7px;
+    border: 1px solid #29fafa; /* Neon cyan */
+    border-radius: 2px;
+    color: whitesmoke; /* White text for readability */
+    text-align: center;
+    box-shadow: 0 0 5px #29fafa; /* Glow effect */
+}
+.pagination > a:hover {
+    background-color: #29fafa; /* Neon cyan hover */
+    color: #111; /* Dark text for contrast */
+    transition: 0.2s;
+    cursor: pointer;
+}
+.active_page {
+    background-color: #29fafa; /* Neon cyan active state */
+    color: #111; /* Contrast text */
+    padding: 3px 7px;
+    border: 1px solid #29fafa;
+    border-radius: 2px;
+    transition: 0.2s;
+    box-shadow: 0 0 8px #29fafa; /* Extra glow effect */
+}
+
+.container {
+    display: flex;
+}
+.navbar {
+    width: 20%;
+    padding-top: 100px;
+    text-align: right;
+    border-right: 1px solid gray;
+    height: 100vh;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+.navbar ul > li {
+    list-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-right: 70px;
+    color: #29fafa; /* Neon cyan text */
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+.navbar ul > li:hover {
+    color: #7cff00; /* Neon green hover */
+    text-shadow: 0 0 5px #7cff00; /* Glow effect */
+    transition: 0.2s;
+}
+.navbar ul > li > img {
+    width: 25px;
+    height: auto;
+    margin-right: 15px;
+}
+.deactivate {
+    text-align: center;
+    color: tomato;
+    font-size: 16px;
+    text-shadow: 0 0 4px tomato;
+}
+
+.posts {
+    border-right: 1px solid grey;
+    width: 70%;
+}
+.greeting {
+    border-bottom: 1px solid gray;
+    background-color: #111; /* Dark header for neon look */
+    color: #29fafa; /* Neon cyan text */
+    width: 100%;
+    padding: 20px 30px;
+    font-size: 18px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 0 5px #29fafa; /* Subtle glow */
+}
+
+.info {
+    padding: 20px;
+    width: 20%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    color: #7cff00; /* Neon green text */
+}
+.notice {
+    padding: 20px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    color: #ff1493; /* Neon pink text */
+    text-shadow: 0 0 5px #ff1493; /* Subtle glow */
+}
+.light {
+    font-size: 15px;
+    color: gray;
+}
+.username {
+    font-size: 0.9em;
+    color: #7cff00; /* Neon green username */
+}
+.username:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 5px #7cff00; /* Glow effect */
+}
+.thumbnail {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: 20px;
+    border: 2px solid #29fafa; /* Neon cyan border */
+}
+.filter_white {
+    filter: invert(100%) sepia(2%) saturate(0%) hue-rotate(165deg) brightness(103%) contrast(107%);
+    width: 20px;
+    height: auto;
+    margin-right: 30px;
+}
+
+.empty {
+    margin-top: 50px;
+    text-align: center;
+    color: #ff6f00; /* Neon orange */
+}
+.empty > img {
+    width: 200px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #ff6f00); /* Neon glow */
+}

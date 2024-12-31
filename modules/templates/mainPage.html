@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='Images/SVG/twitter.svg') }}"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!-- <link rel="stylesheet" href="{{ url_for('static',filename = 'css/mainPage.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'css/tweet.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'css/profile.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'css/constant.css') }}"> -->
+
+    <link id="theme-main" rel="stylesheet" href="{{ url_for('static', filename='css/mainPage.css') }}">
+    <link id="theme-tweet" rel="stylesheet" href="{{ url_for('static', filename='css/tweet.css') }}">
+    <link id="theme-profile" rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+    <link id="theme-constant" rel="stylesheet" href="{{ url_for('static', filename='css/constant.css') }}">
+    
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script>
+        // Get the current start time from localStorage, or initialize it if not set
+        let startTime = localStorage.getItem('startTime');
+        if (!startTime) {
+            startTime = Date.now();
+            localStorage.setItem('startTime', startTime);
+        }
+    
+        // Function to calculate the time spent in minutes
+        function trackTime() {
+            let elapsedTime = (Date.now() - startTime) / 60000; // Convert ms to minutes
+            return elapsedTime;
+        }
+    
+        // Monitor time every minute
+        setInterval(function() {
+            let timeSpent = trackTime();
+            if (Math.floor(timeSpent) >= 15) {
+                // Send a request to the server to update points for the user
+                fetch('/earn_points', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ points: 10 })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.message) {
+                        alert(data.message);  // Show the alert
+                        document.getElementById('pointModal').style.display = 'block'; // Show the custom modal
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+    
+                // Reset the start time in case user reaches 10 minutes on multiple pages
+                localStorage.setItem('startTime', Date.now());
+            }
+        }, 60000);  // Check time every minute
+    </script>
+
+<style>
+    /* Modal pop-up styling */
+    #pointModal {
+        display: none;  /* Hidden by default */
+        position: fixed;
+        z-index: 1;  /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    /* Modal content */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+
+    /* Close button */
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <ul>
+                <li><img src="{{ url_for('static', filename='Images/SVG/twitter.svg') }}" alt="" style="width: 50px; height: auto; margin-bottom: 30px;"></li>
+                <li><img src="{{ url_for('static', filename='Images/SVG/user.svg') }}" alt=""><a href="{{ url_for('account') }}">Profile</a></li>
+                <li><img src="{{ url_for('static', filename='Images/SVG/home.svg') }}" alt=""><a href="{{ url_for('dashboard') }}">Home</a></li>
+                <!--<li><img src="https://www.flaticon.com/svg/static/icons/svg/3077/3077325.svg" alt=""><a href="#">Search</a></li>-->
+                <li><img src="{{ url_for('static', filename='Images/SVG/logout.svg') }}" alt=""><a href="{{ url_for('logout') }}">logout</a></li>
+                <li><img src="{{ url_for('static', filename='Images/SVG/saved_posts.svg') }}" alt=""><a href="{{ url_for('bookmarks') }}">Saved</a></li>
+                <li> <a href="{{ url_for('redeem_page') }}">Redeem</a></li>
+            </ul>
+        </div>
+        <div class="posts">
+            {% block pageContent %}
+            {% endblock %}
+        </div>
+        <div class="info">
+            <div class="notice">
+                <h2 class="header">Hey there!</h1>
+                <p class="meta">It's good to see you back! Before you start tweeting, make sure to keep the following point in mind.</p>
+                <p>Let's not spread any hate. Please ensure that there are not any tweets which may hurt the sentiments of a person or a community. Else, we would be forced to take down your tweet.</p>
+                <p>That being said, don't hold back. Twitter was made to allow propogation of free speech. So start tweeting away!</p>
+                <br>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                            {% for message in messages %}
+                            <div class="flash">{{ message }}</div>
+                            {% endfor %}
+                        {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+    </div>
+
+    <div id="pointModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('pointModal').style.display='none'">&times;</span>
+            <p>You've earned 10 points for being active for 10 minutes!</p>
+        </div>
+    </div>
+
+
+    <script language="javascript" type="text/javascript">
+        function chngimg() {
+            var img = document.getElementById('imgplus').src;
+            if (img.indexOf("{{ url_for('static', filename='Images/SVG/bookmark.svg') }}")!=-1) {
+                document.getElementById('imgplus').src  = "{{ url_for('static', filename='Images/SVG/bookmark_save.svg') }}";
+            }
+             else {
+               document.getElementById('imgplus').src = "{{ url_for('static', filename='Images/SVG/bookmark.svg') }}";
+           }
+    
+        }
+        // Get the modal
+        var modal = document.getElementById('id01');
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+    // Function to switch CSS files when a theme is selected
+    function switchTheme(theme) {
+        document.getElementById('theme-main').setAttribute('href', '/static/css/'+'mainpage_'+ theme + '.css');
+document.getElementById('theme-tweet').setAttribute('href', '/static/css/'+'tweet_'+ theme + '.css');
+document.getElementById('theme-profile').setAttribute('href', '/static/css/'+'profile_'+ theme + '.css');
+document.getElementById('theme-constant').setAttribute('href', '/static/css/'+'constant_'+ theme + '.css');
+
+
+        // Optionally, save the theme selection in localStorage so it persists across pages
+        localStorage.setItem('theme', theme);
+    }
+
+    // On page load, check if a theme is stored in localStorage
+    window.onload = function() {
+        var savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            // Apply the stored theme when the page loads
+            switchTheme(savedTheme);
+        } else {
+            // If no theme is stored, set the default theme (light theme, for example)
+            switchTheme('light');
+        }
+    };
+
+    </script>
+   
+
+</body>
+</html>
